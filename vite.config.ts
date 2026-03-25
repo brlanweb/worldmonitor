@@ -7,6 +7,8 @@ import { promisify } from 'util';
 import pkg from './package.json';
 import { VARIANT_META, type VariantMeta } from './src/config/variant-meta';
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // Env-dependent constants moved inside defineConfig function
 
 
@@ -749,6 +751,7 @@ export default defineConfig(({ mode }) => {
           enabled: false,
         },
       }),
+      cloudflare()
     ],
     resolve: {
       alias: {
